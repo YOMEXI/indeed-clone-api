@@ -15,6 +15,7 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: ${{secrets.HEROKU_APP_NAME}} #Must be unique in Heroku
           heroku_email: ${{secrets.HEROKU_APP_EMAIL}}
+        run: npm run build
         env:
           HD_NODE_ENV: ${{secrets.NODE_ENV}}
           HD_JWT_SECRET: ${{secrets.JWT_SECRET}}
@@ -24,4 +25,5 @@ jobs:
           HD_API_SECRET: ${{secrets.API_SECRET}}
           HD_DATABASE_URL: ${{secrets.DATABASE_URL}}
           HD_CLOUD_NAME: ${{secrets.CLOUD_NAME}}
-           HD_CorsAllowedWebsite: ${{secrets.CorsAllowedWebsite}}
+          HD_CorsAllowedWebsite: ${{secrets.CorsAllowedWebsite}}
+        procfile: 'web: node dist/main.js'
