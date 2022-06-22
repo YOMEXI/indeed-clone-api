@@ -21,7 +21,7 @@ jobs:
           HD_JWT_EXPIRY: ${{secrets.JWT_EXPIRY}}
           HD_ORIGIN: ${{secrets.ORIGIN}}
           HD_API_KEY: ${{secrets.API_KEY}}
-          HD_PORT: ${{secrets.PORT}
+          HD_PORT: ${{secrets.PORT}}
           HD_API_SECRET: ${{secrets.API_SECRET}}
           HD_DATABASE_URL: ${{secrets.DATABASE_URL}}
           HD_CLOUD_NAME: ${{secrets.CLOUD_NAME}}
