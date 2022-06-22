@@ -7,6 +7,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AppModule = void 0;
+const dotenv = require("dotenv");
+dotenv.config();
 const common_1 = require("@nestjs/common");
 const config_1 = require("@nestjs/config");
 const typeorm_1 = require("@nestjs/typeorm");
@@ -23,7 +25,7 @@ AppModule = __decorate([
             user_module_1.UserModule,
             typeorm_1.TypeOrmModule.forRoot({
                 type: 'postgres',
-                url: process.env.DATABASE_URL,
+                url: String(process.env.DATABASE_URL),
                 autoLoadEntities: true,
                 synchronize: true,
             }),

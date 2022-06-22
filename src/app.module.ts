@@ -1,10 +1,12 @@
+import * as dotenv from 'dotenv';
+
+dotenv.config();
+
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { UserController } from './user/user.controller';
-import { UserService } from './user/user.service';
 import { UserModule } from './user/user.module';
 import { JobModule } from './job/job.module';
 
@@ -14,7 +16,7 @@ import { JobModule } from './job/job.module';
     UserModule,
     TypeOrmModule.forRoot({
       type: 'postgres',
-      url: process.env.DATABASE_URL,
+      url: String(process.env.DATABASE_URL),
       autoLoadEntities: true,
       synchronize: true,
     }),
